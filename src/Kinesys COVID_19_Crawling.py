@@ -9,4 +9,9 @@ params = {
     'brdGubun' : 14,
 }
 
-response = 
+response = request.get(page_url, params=params)
+response.raise_for_status()
+soup = BeautifulSoup(response.text, 'html.parser')
+
+html = str(soup.select_one(".data_table.mgt16"))
+
