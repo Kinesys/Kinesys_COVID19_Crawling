@@ -9,7 +9,7 @@ params = {
     'brdGubun' : 14,
 }
 
-response = request.get(page_url, params=params)
+response = request.get(site_url, params=params)
 response.raise_for_status()
 soup = BeautifulSoup(response.text, 'html.parser')
 
